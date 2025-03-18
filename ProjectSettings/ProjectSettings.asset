@@ -164,6 +164,7 @@ PlayerSettings:
   androidMinAspectRatio: 1
   applicationIdentifier:
     Android: com.OTUandUMNG.FireSafetySimulation
+    Standalone: com.OTU-and-UMNG.Fire-Safety-Simulation
   buildNumber:
     Standalone: 0
     VisionOS: 0

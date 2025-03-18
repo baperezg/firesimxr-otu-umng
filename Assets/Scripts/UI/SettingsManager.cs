@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
 using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.XR.Interaction.Toolkit.Locomotion.Movement;
+using UnityEngine.XR.Interaction.Toolkit.Locomotion.Turning;
 
 public class SettingsManager : MonoBehaviour
 {
@@ -29,8 +31,8 @@ public class SettingsManager : MonoBehaviour
     public Slider moveSlider;
 
     [Header("Components")]
-    public ContinuousTurnProviderBase turnProvider;
-    public ContinuousMoveProviderBase moveProvider;
+    public ContinuousMoveProvider moveProvider;  
+    public ContinuousTurnProvider turnProvider;
 
     [Header("Components")]
     private float volume;
@@ -63,7 +65,8 @@ public class SettingsManager : MonoBehaviour
 
     public void SetVolume(float masterVolume)
     {
-        AudioSource[] allAudioSources = FindObjectsOfType<AudioSource>();
+        AudioSource[] allAudioSources = FindObjectsByType<AudioSource>(FindObjectsSortMode.None);
+
 
         foreach (AudioSource audioSource in allAudioSources)
         {
