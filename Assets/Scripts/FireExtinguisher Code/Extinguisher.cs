@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
 using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.XR.Interaction.Toolkit.Inputs.Haptics;
 public class Extinguisher : MonoBehaviour
 {
     public ParticleSystem foamParticle;
@@ -13,8 +14,8 @@ public class Extinguisher : MonoBehaviour
     [SerializeField] private AudioSource spraySound;
     [SerializeField] private LayerMask fireLayer;
 
-    public XRBaseController leftHand;
-    public XRBaseController rightHand;
+    public HapticImpulsePlayer leftHand;
+    public HapticImpulsePlayer rightHand;
 
     public ExtinguisherType extinguisherType;
     public enum ExtinguisherType
