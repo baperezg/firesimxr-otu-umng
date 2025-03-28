@@ -28179,28 +28179,6 @@ MonoBehaviour:
   m_DefaultActionMap: Pausemenu
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &1911852585 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 517967469839492592, guid: 9d9c63e3b79e8974ebe5e39dbc268f3c, type: 3}
-  m_PrefabInstance: {fileID: 3246480489924638108}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1911852559}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 919e39492806b334982b6b84c90dd927, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1911852586 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4107389868243246005, guid: 9d9c63e3b79e8974ebe5e39dbc268f3c, type: 3}
-  m_PrefabInstance: {fileID: 3246480489924638108}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1911852559}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bf296fc962d7184ab14ad1841598d5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1911852590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28216,8 +28194,8 @@ MonoBehaviour:
   audioSlider: {fileID: 980729993}
   sensSlider: {fileID: 1526525559}
   moveSlider: {fileID: 432499459}
-  turnProvider: {fileID: 1911852585}
-  moveProvider: {fileID: 1911852586}
+  moveProvider: {fileID: 0}
+  turnProvider: {fileID: 0}
 --- !u!4 &1913230293 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 45e3c0b95bd84a543a0a7c61bae744a3, type: 3}
