@@ -7,6 +7,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Locomotion.Movement;
 using UnityEngine.XR.Interaction.Toolkit.Locomotion.Turning;
 
+
 public class SettingsManager : MonoBehaviour
 {
     public static SettingsManager Instance { get; private set; }
@@ -32,7 +33,8 @@ public class SettingsManager : MonoBehaviour
 
     [Header("Components")]
     public ContinuousMoveProvider moveProvider;  
-    public ContinuousTurnProvider turnProvider;
+    public ContinuousTurnProvider continuousTurn;
+    public SnapTurnProvider snapTurn;
 
     [Header("Components")]
     private float volume;
@@ -41,6 +43,9 @@ public class SettingsManager : MonoBehaviour
     private void Start()
     {
         LoadSettings();
+
+        int turnTypeIndex = PlayerPrefs.GetInt("TurnType", 0);
+        SetTypeFromIndex(turnTypeIndex);
     }
     public void ApplySettings()
     {
@@ -75,7 +80,7 @@ public class SettingsManager : MonoBehaviour
     }
     public void SetTurnSpeed(float turnSpeed)
     {
-        turnProvider.turnSpeed = turnSpeed;
+        continuousTurn.turnSpeed = turnSpeed;
     }
     public void SetMoveSpeed(float moveSpeed)
     {
@@ -94,5 +99,25 @@ public class SettingsManager : MonoBehaviour
                 Debug.Log(PlayerPrefs.GetString("Settings"));
             }
         }
+    }
+
+    public void SetTypeFromIndex(int index)
+    {
+        if (snapTurn != null && continuousTurn != null)
+        {
+            if (index == 0)
+            {
+                snapTurn.enabled = true;
+                continuousTurn.enabled = false;
+            }
+            else
+            {
+                snapTurn.enabled = false;
+                continuousTurn.enabled = true;
+            }
+        }
+
+        PlayerPrefs.SetInt("TurnType", index);
+        PlayerPrefs.Save();
     }
 }

@@ -5,41 +5,71 @@ using UnityEngine.InputSystem;
 
 public class PauseMenu : MonoBehaviour
 {
+    public Transform head;
+    public float spawnDistance; 
+    
+    public GameObject menu;
+    public GameObject hud;
 
-    public GameObject pauseMenu;
+    public InputActionProperty pauseButton;
+    public InputActionProperty timerButton;
+
     public bool pauseUIActive = true;
-    public GameObject leftRay, rigthRay;
+    
     // Start is called before the first frame update
     void Start()
     {
         DisplayPauseScreen();
     }
 
-    public void PauseButtonPress(InputAction.CallbackContext context)
+    private void Update()
     {
-        if (context.performed)
+        if (pauseButton.action.WasPerformedThisFrame())
+        {
             DisplayPauseScreen();
+        }
+        else if (timerButton.action.WasPerformedThisFrame())
+        {
+            hud.SetActive(!hud.activeSelf);
+            hud.transform.position = head.position + new Vector3(head.forward.x, 0, head.forward.z).normalized * spawnDistance;
+        }
 
-        
+        // Rotate menu toward head
+        Vector3 menuDir = head.position - menu.transform.position;
+        menuDir.y = 0;
+        if (menuDir.sqrMagnitude > 0.001f)
+            menu.transform.rotation = Quaternion.LookRotation(menuDir);
+
+        // Rotate HUD toward head
+        Vector3 hudDir = head.position - hud.transform.position;
+        hudDir.y = 0;
+        if (hudDir.sqrMagnitude > 0.001f)
+            hud.transform.rotation = Quaternion.LookRotation(hudDir);
     }
     public void DisplayPauseScreen()
     {
         if (pauseUIActive)
         {
-            pauseMenu.SetActive(false);
-            pauseUIActive = false;
+            menu.SetActive(false);
             Time.timeScale = 1;
-            leftRay.SetActive(false);
-            rigthRay.SetActive(false);
+
+            pauseUIActive = false;
+
+           
         }
 
         else if(!pauseUIActive)
         {
-            pauseMenu.SetActive(true);
+            menu.SetActive(true);
             pauseUIActive = true;
             Time.timeScale = 0;
-            leftRay.SetActive(true);
-            rigthRay.SetActive(true);
+
+
+            menu.transform.position = head.position + new Vector3(head.forward.x, 0, head.forward.z).normalized * spawnDistance;
+
+            
         }
     }
+
+    
 }
