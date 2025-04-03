@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
 using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.XR.Interaction.Toolkit.Locomotion.Comfort;
 using UnityEngine.XR.Interaction.Toolkit.Locomotion.Movement;
 using UnityEngine.XR.Interaction.Toolkit.Locomotion.Turning;
 
@@ -35,6 +36,7 @@ public class SettingsManager : MonoBehaviour
     public ContinuousMoveProvider moveProvider;  
     public ContinuousTurnProvider continuousTurn;
     public SnapTurnProvider snapTurn;
+   
 
     [Header("Components")]
     private float volume;

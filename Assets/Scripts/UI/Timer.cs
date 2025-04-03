@@ -125,13 +125,18 @@ public class Timer : MonoBehaviour
         float timeScore = timeRemaining / modeTimer;
         float gradeScore = (tasksCompleted / 4.0f) * 0.7f + timeScore * 0.3f;
 
-        if (gradeScore >= 0.9) return "A+";
-        if (gradeScore >= 0.8) return "A";
-        if (gradeScore >= 0.7) return "B+";
-        if (gradeScore >= 0.6) return "B";
-        if (gradeScore >= 0.5) return "C+";
-        if (gradeScore >= 0.4) return "C";
-        if (gradeScore >= 0.3) return "D+";
+        if (gradeScore >= 0.95) return "A+";
+        if (gradeScore >= 0.9) return "A";
+        if (gradeScore >= 0.85) return "A-";
+        if (gradeScore >= 0.8) return "B+";
+        if (gradeScore >= 0.75) return "B";
+        if (gradeScore >= 0.7) return "B-";
+        if (gradeScore >= 0.65) return "C+";
+        if (gradeScore >= 0.6) return "C";
+        if (gradeScore >= 0.55) return "C-";
+        if (gradeScore >= 0.5) return "D+";
+        if (gradeScore >= 0.45) return "D";
+
 
         return "D-";
     }
