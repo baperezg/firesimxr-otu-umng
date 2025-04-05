@@ -1969,8 +1969,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
-  m_Colliders:
-  - {fileID: 83103633}
+  m_Colliders: []
   m_InteractionLayers:
     m_Bits: 1
   m_DistanceCalculationMode: 1
@@ -5248,7 +5247,7 @@ MonoBehaviour:
   - {fileID: 1658538849}
   - {fileID: 8306520}
   firePrefab: {fileID: 2569933561165318209, guid: 0a419533707d067419158aa27027191c, type: 3}
-  taskDone: {fileID: 474356277}
+  taskDone: {fileID: 16266212}
   fireType: 1
   identifyFireText: {fileID: 1995482205}
   isIdentified: 0
@@ -26939,13 +26938,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerText: {fileID: 875249094}
   gradeText: {fileID: 827779504}
-  completedTimeText: {fileID: 1664317137}
+  completedTimeText: {fileID: 958117295}
   taskText: {fileID: 33606615}
   timeRemaining: 240
   modeTimer: 240
   phoneObject: {fileID: 1863588014}
   fire: {fileID: 2569933561165318209, guid: 0a419533707d067419158aa27027191c, type: 3}
-  fireText: {fileID: 16266210}
+  fireText: {fileID: 672424579}
   finishedText: {fileID: 1502019114}
   timesUpText: {fileID: 1595635710}
   task1: {fileID: 881411377}
@@ -29929,12 +29928,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2417358720014700305, guid: 27024f5809f4a4347b9cd7f26a1bdf93, type: 3}
       propertyPath: m_Handedness
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2417358720014700305, guid: 27024f5809f4a4347b9cd7f26a1bdf93, type: 3}
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 7817057805036922546}
+    - target: {fileID: 2417358720014700305, guid: 27024f5809f4a4347b9cd7f26a1bdf93, type: 3}
+      propertyPath: m_InteractionLayers.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 2417358720014700305, guid: 27024f5809f4a4347b9cd7f26a1bdf93, type: 3}
       propertyPath: m_UIHoverEntered.m_PersistentCalls.m_Calls.Array.size
       value: 0
@@ -32707,12 +32710,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2417358720014700305, guid: 27024f5809f4a4347b9cd7f26a1bdf93, type: 3}
       propertyPath: m_Handedness
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2417358720014700305, guid: 27024f5809f4a4347b9cd7f26a1bdf93, type: 3}
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 7817057805036922546}
+    - target: {fileID: 2417358720014700305, guid: 27024f5809f4a4347b9cd7f26a1bdf93, type: 3}
+      propertyPath: m_InteractionLayers.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4125421792874400280, guid: 27024f5809f4a4347b9cd7f26a1bdf93, type: 3}
       propertyPath: m_Name
       value: Poke Interactor
@@ -35987,7 +35994,7 @@ MonoBehaviour:
   inputText: {fileID: 1882197046}
   respondentsUI: {fileID: 397810698}
   Numbers: 123
-  taskDone: {fileID: 474356277}
+  taskDone: {fileID: 1316351099}
   isCompleted: 0
 --- !u!1 &1865208675
 GameObject:
@@ -42693,7 +42700,7 @@ PrefabInstance:
     - target: {fileID: 6126115650153624240, guid: 4fbd375e7d205b34aa0267c778f34e05, type: 3}
       propertyPath: taskDone
       value: 
-      objectReference: {fileID: 474356277}
+      objectReference: {fileID: 705493283}
     - target: {fileID: 6126115650153624240, guid: 4fbd375e7d205b34aa0267c778f34e05, type: 3}
       propertyPath: audiosource
       value: 
